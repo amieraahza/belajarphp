@@ -10,6 +10,23 @@ if (mysqli_connect_errno())
  }
  else
  {
- 	echo "berjaya masuk database";
+ 	echo "berjaya masuk database <br>";
  }
 
+$sql = 'select * from biodata';
+// Perform queries 
+$result = mysqli_query($con, $sql);
+$kira = mysqli_num_rows($result);
+//echo $kira;
+
+if ($kira > 0) 
+{
+	while($row = mysqli_fetch_assoc($result)) 
+	{
+		echo "Name: " . $row["namapenuh"]. "<br>";
+	}
+} else 
+{
+	echo "0 results";
+}
+//*/
