@@ -131,9 +131,9 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
 
-    <script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
-    <script src="../../../../assets/js/vendor/popper.min.js"></script>
-    <script src="../../../../assets/js/vendor/holder.min.js"></script>
+    <script>window.jQuery || document.write('<script src="source/js/jquery-slim.min.js"><\/script>')</script>
+    <script src="source/js/popper.min.js"></script>
+    <script src="source/js/holder.min.js"></script>
     <script>
       Holder.addTheme('thumb', {
         bg: '#55595c',
