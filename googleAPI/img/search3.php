@@ -18,13 +18,19 @@ $service = new Google_Service_Customsearch($client);
 $optParams = array("cx"=>$GCSE_SEARCH_ENGINE_ID);    
 $results = $service->cse->listCse($cariApa, $optParams);
 
+echo '<pre>results => ';
+foreach($results->getItems() as $k=>$item){
+    var_dump($item);
+}
+echo '</pre>';
+
 //echo '<pre>$results=>'; print_r($results); echo '</pre>';
 
 //echo '<pre>$link=>'; print_r($results['items'][0]['link']); echo '</pre>';
 //echo '<pre>$gambar=>'; print_r($results['items'][1]['pagemap']['metatags'][0]); echo '</pre>';
-echo '<pre>$gambar=>'; echo count($results['items']); echo '</pre>';
+//echo '<pre>$gambar=>'; echo count($results['items']); echo '</pre>';
 
-for($kira = 0; $kira <= count($results['items']); $kira++)
+/*for($kira = 0; $kira <= count($results['items']); $kira++)
 {
 	$og_title = (isset($results['items'][$kira]['pagemap']['metatags'][0]['og:title'])) ?
 		$results['items'][$kira]['pagemap']['metatags'][0]['og:title']
@@ -44,7 +50,7 @@ for($kira = 0; $kira <= count($results['items']); $kira++)
 	echo '<br><a target="blank" href="' . $og_url . '">' . $og_url . '</a>';
 	echo '<br><img src="' . $og_image . '"></a>';
 	echo '<hr>';
-}
+}*/
 /*
 $gambar=>Array
 (
