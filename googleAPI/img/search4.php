@@ -5,7 +5,9 @@ include_once '../google-api-php-client-2.2.1/vendor/autoload.php';
 /**
  * Retrieves a simple set of google results for a given plant id.
  */
-class GoogleResults implements IteratorAggregate {
+//class GoogleResults implements IteratorAggregate {
+class GoogleResults { 
+
 
     // Create one or more API keys at https://console.developers.google.com/apis/credentials
   const GCSE_API_KEY = "AIzaSyD1KORf2kRrS7r6n5rT4nwL9QBGD8QCAgk";
@@ -77,16 +79,18 @@ class GoogleResults implements IteratorAggregate {
 
         // Since cse inherits from Google_Collections (which implements Iterator)
         // we can loop through the results by using `getItems()`
+       // echo '<pre>$results=><hr>';
         foreach($results->getItems() as $k=>$item){
-            var_dump($item);
-            $item[] = $item;
-        }
+            //var_dump($item);
+            //print_r($item);
+            $items[] = $item;
+        } //echo '</pre>';
 
         return $items;
   }
 }
 
 $searchTerm = (isset($_GET['find'])) ? $_GET['find'] : 'samsung'; # cari barang apa 
-$client = new Google_Client();
-$service = new GoogleResults($client);
-$results = $service->cse->listCse($searchTerm, $optParams);
+$service = new GoogleResults();
+$items = $service->getSearchResults($searchTerm);
+echo '<pre>$results=><hr>'; print_r($items); echo '</pre>';
